@@ -1,14 +1,9 @@
 class Libreta_contacto:
     
-    def __init__(self):
-        #self.__nombre
-        #self.__telefono
-        #self.__mail
-        #self.direccion
-        
+    def __init__(self):    
         self.__list_contact = []
     
-    #!
+    #! Este método es para agregar contactos.
     def Anadir_contacto(self):
         print(' ')        
         p_nombre = input('Ingrese el nombre del contacto que desea ingresar: ')
@@ -19,14 +14,15 @@ class Libreta_contacto:
         self.__list_contact.append({'Nombre': p_nombre,'Telefono':p__telefono,'Mail':p__mail,'Direccion':p_direccion})
         print('\n')
         
-    #! 
+    #* Este método es para mostrar todos los contactos en nuestra lista. 
     def Mostrar_contacto(self):
         print(' ')
         print('Lista de Contacto:')
         for indice,contacto in enumerate(self.__list_contact):
             print('{}) {}, de telefono: {} y e-mail: {}, reside en: {}'.format(indice,contacto['Nombre'],contacto['Telefono'],contacto['Mail'],contacto['Direccion']))
         print('\n')    
-    #!
+    
+    #* Este método es permite buscar los contacto filtrado por el nombre.
     def Buscar_contacto(self):
         #print(' ')
         tosearch = input('Por favor, ingrese nombre del contacto que desea buscar: ')
@@ -40,7 +36,7 @@ class Libreta_contacto:
                 print('{}, de telefono: {} y e-mail: {}, residen en: {}'.format(contacto['Nombre'],contacto['Telefono'],contacto['Mail'],contacto['Direccion']))
         print('\n')        
     
-    #!
+    #! Este método es para modificar ciertos datos.
     def Modificar_data(self):
         print(' ')
         id_telefono = input('Ingrese el telefono del contacto que desea modificar:')
@@ -88,18 +84,23 @@ class Libreta_contacto:
         print('\n')    
             
 
-import os
+#El IMPORT, es para poder importar funciones especiales del OS que me permitan limpiar la consola,
+# independientemente del SO, :).
 
+import os
 def clear():
     if os.name == "nt":
         os.system("cls")
     else:
         os.system("clear")
              
-                     
+
+#Instancia del Objeto.                     
 Libreta = Libreta_contacto()
 menu_op = 0
 
+
+#Lo encapsule en el try por si acaso un error.
 try:
     #!Remember WHILE LOOP
     while menu_op != 6:
@@ -136,3 +137,4 @@ except:
 
 #Edwin Alberto Roman Seberino
 #2020-10233
+#Gracias por la practica estuvo super!
